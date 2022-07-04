@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="../../resources/img/logo.png"/>
+    <title>付款成功!</title>
+    <link href="../../resources/css/cssreset-min.css" rel="stylesheet">
+    <link href="../../resources/css/common.css" rel="stylesheet">
+    <link href="../../resources/css/new_header/header.css" rel="stylesheet">
+	<link href="../../resources/css/new_header/footer.css" rel="stylesheet">
+    <link href="../../resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../resources/css/swiper.min.css" rel="stylesheet">
+    <style>
+        body{
+            background-color: #FFF6E7;
+        }
+        .form-control{
+            background-color: #E0E0E0;
+        }
+        .wrap_popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            color: #333;
+            transition: .5s;
+            z-index: -1;
+            background: transparent;
+        }
+        .wrap_popup.show {
+            z-index: 100;
+            background: rgba(0, 0, 0, .5);
+        }
+        .popup_box.show {
+            transform: translateY(calc(50vh - 125px));
+        }
+        .popup_box {
+            transition: .5s;
+            position: absolute;
+            width: 500px;
+            /* height: 250px; */
+            text-align: center;
+            background: #e2e1e0;
+            transform: translateY(1500px);
+            left: calc(50vw - 250px);
+            border-radius: 20px;
+            box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, .3);
+        }
+        .popup_cancel {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background: #f2bc67;
+            clip-path: inset(0px 0px 0px 0px round 0 0 20% 20%);
+            -webkit-clip-path: inset(0px 0px 0px 0px round 0 0 20% 20%);
+            margin-left: 420px;
+        }
+
+        .popup_cancel span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .popup_title {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .btn_submit{
+            text-align: center;
+            margin: 25px 0 20px 0;
+        }
+
+        .btn_submit span{
+            background: #f2bc67;
+            padding: 5px 80px;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn_submit span:hover{
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, .5);
+        }
+        @media (max-width: 575px) {
+            .popup_box {
+                width: 300px;
+                /* height: 250px; */
+                transform: translateY(1000px);
+                left: calc(50vw - 150px);
+            }
+            .popup_box.show {
+                transform: translateY(calc(50vh - 110px));
+            }
+            .popup_cancel {
+                margin-left: 220px;
+            }
+        }
+        @media (max-width: 320px) {
+            .popup_box {
+                width: 250px;
+                /* height: 200px; */
+                left: calc(50vw - 125px);
+            }
+            .popup_box.show {
+                transform: translateY(calc(50vh - 100px));
+            }
+            .popup_cancel {
+                position: relative;
+                width: 50px;
+                height: 30px;
+                background: #f2bc67;
+                clip-path: inset(0px 0px 0px 0px round 0 0 20% 20%);
+                margin-left: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap-content">
+        <header class="wrap-header">
+            <div class="wrap_menu d-flex py-md-3 px-md-4 px-3 py-2">
+                <div class="menu transition4s">
+                    <div class="bar bar1 transition4s"></div>
+                    <div class="bar bar2 transition4s"></div>
+                    <div class="bar bar3 transition4s"></div>
+                </div>
+                <div class="goIndex title d-flex">
+                    <a href="https://fate.opoint.com.tw/home/">
+                        <figure class="logo mr-3">
+                            <img alt="logo" class="object_fit_contain" src="../../resources/img/header_footer/headerlogo.png">
+                        </figure>
+                    </a>
+                    <a href="#"><h1>開運算算</h1></a>
+                </div>
+                <div class="member">
+                    <a href="https://fate.opoint.com.tw/home/member/member.html">
+                        <figure>
+                            <img class="object_fit_contain" alt="member" src="../../resources/img/header_footer/member.png" alt="">
+                        </figure>
+                    </a>
+                </div>
+            </div>
+            <ul class="menu_slide transition4s">
+                <li class="transition4s"><a href="https://truly.page.link/9i7u">算算² #真人線上塔羅占卜</a></li>
+                <li class="transition4s"><a href="https://fate.opoint.com.tw/fuyuntai/index.htm">線上點燈－光明燈、安太歲</a></li>
+                <li class="transition4s"><a href="https://fate.opoint.com.tw/home/campaign/tarot/index.html">算算的塔羅占卜</a></li>
+                <li class="transition4s"><a href="https://fate.opoint.com.tw/marryMe/index.html">我們的命定戀愛指數</a></li>
+                <li class="transition4s"><a href="https://fate.opoint.com.tw/lover/index.html">理想情人</a></li>
+                <li class="transition4s"><a href="https://fate.opoint.com.tw/soul/index.html">前世今生</a></li>
+                <li class="transition4s"><a href="https://fate.opoint.com.tw/rice/index.html">米卦占卜</a></li>
+                <li class="transition4s"><a href="https://fate.opoint.com.tw/rainbow/index.html">彩虹占卜</a></li>
+                <li class="transition4s"><a href="https://fate.opoint.com.tw/vipPay/index.html">算算²VIP儲值</a></li>
+                <li class="transition4s"><a href="https://fate.opoint.com.tw/home/">開運算算首頁</a></li>
+            </ul>
+        </header>
+        <div class="container-fluid text-center py-3" style="background-color: #E0E0E0;">
+            <h2 class="h5 mb-2">付費成功</h2>
+            <p>請誠心地述說自己的心願和對佛的許諾</p>
+            <form action="" class="px-md-5 px-2 pb-3 text-left bg-white rounded" id="main-form"> 
+                <h3 class="h5 pt-3">祈福內容:光明燈</h3>
+                <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" class="form-control" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="birth">出生日期</label>
+                    <div class="form-row">
+                        <div class="col">
+                            <select name="birth-year" id="birth-year" class="form-control">
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select name="birth-month" id="birth-month" class="form-control">
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select name="birth-day" id="birth-day" class="form-control">   
+                               
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>現居地址</label>
+                    <div class="form-check pl-1">
+                        <input type="radio" name="area" value="taiwan" style="transform: scale(2);" class="mr-2" checked>
+                        <label class="mr-md-5 mr-2">台灣地區</label>
+                        <input type="radio" name="area" value="foreign" style="transform: scale(2);" class="mr-2"> 
+                        <label>海外地區</label>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <select name="city" id="city" class="form-control area-selector">
+                                <option value="" selected disabled>縣/市</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select name="dist" id="dist" class="form-control area-selector">
+                                <option value="" selected disabled>鄉/鎮/市/區</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input type="text" id="road" class="form-control mt-2">
+                </div>
+                <div class="form-group">
+                    <label for="">請誠心地許下您的願望</label>
+                    <textarea name="wish-msg" id="wish-msg" cols="30" rows="10" maxlength="70" style="resize : none;" class="form-control"></textarea>
+                </div>
+                <div class="row my-3">
+                    <div class="col">
+                        <div class="btn btn-lg w-100 text-white" id="confirm-btn" style="background-color: #c9a02a;">萬分感恩，送出資料</div>
+                    </div>
+                </div>
+                <p>貼心提醒</p>
+            <ul class="notice text-left small">
+                <li>1.  提醒您，送出資料後才算完成點燈祈福步驟喔！</li>
+                <li>2.  若您在<span class="text-danger">【當月】</span>送出祈福資料，則會於<span class="text-danger">【次月20日】</span>由無上元老師祈福，例如您在8/15送出祈福資料，則會於9/20由無上元老師祈福。</li>
+                <li>3.  祈福完畢後，將於<span class="text-danger">10個工作天</span>內將祈福點燈的資料照上傳至您在開運算算的訂單頁中。</li>
+            </ul>
+            </form>
+        </div>
+        
+        <div class="wrap_popup">
+            <div class="popup_box">
+                <div class="popup_cancel"><span>Ｘ</span></div>
+                <p class="popup_content"></p>
+                <div class="btn_submit"><span>確認</span></div>
+            </div>
+        </div>
+        <footer class="wrap-footer py-md-4 pt-2 pb-3">
+            <a href="https://fate.opoint.com.tw/home/" target="_blank">
+                <figure class="footer_logo">
+                    <img alt="logo" class="object_fit_contain" src="../../resources/img/header_footer/headerlogo.png">
+                </figure>
+            </a>
+            <div class="wrap-footer-content d-flex">
+                <h4><a href="https://fate.opoint.com.tw/home/" target="_blank">品牌首頁</a></h4>
+                <span class="line"></span>
+                <h4><a href="https://supr.link/zZDTK" target="_blank">算算APP</a></h4>
+                <span class="line"></span>
+                <h4><a href="https://fate.opoint.com.tw/home/serviceIntro.html" target="_blank">服務條款</a></h4>
+            </div>
+            <div class="wrap-footer-icon d-flex">
+                <a href="https://line.me/R/ti/p/%40luckycc" target="_blank">
+                    <figure>
+                        <img class="object_fit_contain" src="../../resources/img/header_footer/line.png" alt="Line">
+                    </figure>
+                </a>
+                <a href="https://fb.me/luckycc2020" target="_blank">
+                    <figure>
+                        <img class="object_fit_contain" src="../../resources/img/header_footer/fb.png" alt="Facebook">
+                    </figure>
+                </a>
+                <a href="https://www.instagram.com/luckycc_2020" target="_blank">
+                    <figure>
+                        <img class="object_fit_contain" src="../../resources/img/header_footer/ig.png" alt="Instagram">
+                    </figure>
+                </a>
+            </div>
+            <div class="goMail mail">
+                <a href="mailto:opftservice@gmail.com?subject=開運算算服務問題&amp;body=請填寫您的〖測算服務(ex. 詹惟中/米卦...)〗、〖手機門號〗、〖問題描述及發生大約時間〗">
+                    opftservice@gmail.com
+                </a>
+            </div>
+            <div class="goCoyright copyright"><a href="https://fate.opoint.com.tw/home/" target="_blank">Copyright©2019 開運算算版權所有</a></div>
+        </footer>
+    </div>
+    <script src="../../resources/js/jquery-3.4.1.min.js"></script>
+    <script src="../../resources/js/Common/header.js"></script>
+    
+
+    <script type="text/javascript">
+        var pageId = 'fuyuntai_success';
+        var fromPageId = '${fromPageId}'.replace(/,/g,'').replace(/%20/g,'');
+
+        $(document).ready(function(){
+            init();
+            // addPageViewAjax(pageId, fromPageId);
+            
+            //render date select
+            function init(){
+                //set deafult year
+                renderYear(1910);
+                $('#birth-year').change(dateChange);
+                $('#birth-month').change(dateChange);
+                var cityOptionStr='<option value="" selected disabled>縣/市</option>';
+                $.getJSON("../../resources/js/areadata.json",function(data){
+                    $.each(data,function(i,item){
+                        cityOptionStr+='<option value="'+item.name+'">'+item.name+'</option>';
+                    })
+                    $("#city").append(cityOptionStr); 
+                })  
+            }
+            
+            function renderYear(yearStart){
+                let now = new Date();
+                let yearStr="";
+                for(i=yearStart;i<=now.getFullYear();i++){
+                    if(i==1985){
+                        yearStr+='<option value="'+i+'" selected>'+i+'</option>';
+                    }
+                yearStr+='<option value="'+i+'">'+i+'</option>';
+                }
+                $('#birth-year').append(yearStr);
+                renderMonth();
+                dateChange();
+            }
+            function renderMonth(){
+                let monthStr="";
+                for(i=1;i<=12;i++){
+                    if(i==6){
+                        monthStr+='<option value="'+i+'" selected>'+i+'</option>';
+                    }else{
+                    monthStr+='<option value="'+i+'">'+i+'</option>';
+                    }
+                }
+                $('#birth-month').append(monthStr);
+            }
+            function dateChange(){
+                $('#birth-day').empty();
+                let bigM = ['1','3','5','7','8','12']
+                let dayLen = 31;
+                let dayStr = "";
+                let year = $('#birth-year').val();
+                if((year%4==0&&year%100!=0)||(year%400==0)&&$('#birth-month')==2){
+                    dayLen=29;
+                }else if ($('#birth-month').val()==2){
+                    dayLen=28;
+                }else if(bigM.indexOf($('#birth-month').val())==-1){
+                    dayLen=30;
+                }
+                for(i=1;i<=dayLen;i++){
+                    if(i==15){
+                        dayStr+='<option value="'+i+'" selected>'+i+'</option>';
+                    }else{
+                    dayStr+='<option value="'+i+'">'+i+'</option>';
+                    }
+                }
+                $('#birth-day').append(dayStr);
+            }
+            
+
+            //area check
+            $("input[type=radio]").click(function(){
+            if($(this).val()=="taiwan"){
+                $('#city').empty().removeClass('d-none');
+                $('#dist').empty().removeClass('d-none');
+                $('#dist').append('<option value="" selected disabled>鄉/鎮/市/區</option>');
+                var cityOptionStr='<option value="" selected disabled>縣/市</option>';
+                $.getJSON("../../resources/js/areadata.json",function(data){
+                    $.each(data,function(i,item){
+                        cityOptionStr+='<option value="'+item.name+'">'+item.name+'</option>';
+                    })
+                    $("#city").append(cityOptionStr); 
+                })
+            }else if($(this).val()=="foreign"){
+                $("#city").addClass('d-none');
+                $("#dist").addClass('d-none');
+            }
+        })
+            //render dist list
+            $("#city").change(function(){
+                $("#dist").empty();
+                $.getJSON("../../resources/js/areadata.json",function(data){
+                    let distOptionStr='<option value="" selected disabled>鄉/鎮/市/區</option>';
+                    let distObj=data.find(function(item){
+                        return item.name==$("#city").val()
+                    })
+                    $.each(distObj.districts,function(i,item){
+                        distOptionStr+='<option value="'+item.name+'">'+item.name+'</option>'
+                    })
+                    $('#dist').append(distOptionStr);
+                })
+            })
+            //data validation
+            $("#confirm-btn").click(function(){
+                let area = $('input[name=area]:checked').val();
+                let name = $("#name").val();
+                let birthYear = $("#birth-year").val();
+                let birthMonth = $("#birth-month").val();
+                let birthDay = $("#birth-day").val();
+                let birth = birthYear+'/'+birthMonth+'/'+birthDay;
+                let addrCity = $("#city").val();
+                let addrDist = $("#dist").val();
+                let addrRoad = $("#road").val();
+                let wishMsg = $('#wish-msg').val();
+                if((area=='taiwan')&&name&&birthYear&&birthMonth&&birthDay&&addrCity&&addrDist&&addrRoad&&wishMsg){
+                    let confirmStr='<p>'+$("#name").val()+'</p><p>'+birth+'</p><p>'+addrCity+addrDist+addrRoad+'</p><p>---</p>'+wishMsg;
+                    $('.popup_content').empty().append(confirmStr);
+                    $('.popup_box').addClass('show');
+                    $('.wrap_popup').addClass('show');
+                }else if(((area=='foreign'))&&name&&birthYear&&birthMonth&&birthDay&&addrRoad&&wishMsg){
+                    let confirmStr='<p>'+$("#name").val()+'</p><p>'+birth+'</p><p>'+addrRoad+'</p><p>---</p>'+wishMsg;
+                    $('.popup_content').empty().append(confirmStr);
+                    $('.popup_box').addClass('show');
+                    $('.wrap_popup').addClass('show');
+                }else{
+                    alert("請完整填寫資料");
+                }
+            })
+            //close popup box
+            $(".popup_cancel").click(function(){
+                $(".popup_box").removeClass("show");
+                $(".wrap_popup").removeClass("show");
+            })
+            //submit data
+            $(".btn_submit").click(function(){
+                $("#main-form").submit();
+            })
+        })
+        
+    </script>
+</body>
+</html>

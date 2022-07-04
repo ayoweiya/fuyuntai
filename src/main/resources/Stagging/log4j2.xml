@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="30">
+	<Properties>
+		<Property name="log.dir">${sys:catalina.home}/logs/fuyuntai/</Property>
+        <Property name="name">fuyuntai</Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="RollingFileConsole" fileName="${log.dir}/${name}_Console.log"
+                     filePattern="${log.dir}/$${date:yyyy-MM}/$${date:dd}/${name}_Console-%d{yyyy-MM-dd}-%i.log">
+        	<PatternLayout
+        				pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%C{10}:%M:%L] - %msg%n}{TRACE=Blue}"/>
+        	<Policies>
+        		<TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="50 MB"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile name="RollingFileAll" fileName="${log.dir}/${name}_All.log"
+                     filePattern="${log.dir}/$${date:yyyy-MM}/$${date:dd}/${name}_All-%d{yyyy-MM-dd}-%i.log">
+            <Filters>
+                <ThresholdFilter level="DEBUG"/>
+            </Filters>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%C{10}:%M:%L] - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="50 MB"/>
+            </Policies>
+        </RollingFile>
+        <RollingFile name="RollingFileDebug" fileName="${log.dir}/${name}_Debug.log"
+                     filePattern="${log.dir}/$${date:yyyy-MM}/$${date:dd}/${name}_Debug-%d{yyyy-MM-dd}.log">
+             <Filters>
+             	<ThresholdFilter level="DEBUG"/>
+             	<ThresholdFilter level="INFO" onMatch="DENY" onMismatch="NEUTRAL"/>
+             </Filters>
+             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%C{10}:%M:%L] - %msg%n"/>
+             <Policies>
+             	<TimeBasedTriggeringPolicy/>
+             </Policies>
+        </RollingFile>
+        <RollingFile name="RollingFileInfo" fileName="${log.dir}/${name}_Info.log"
+                     filePattern="${log.dir}/$${date:yyyy-MM}/$${date:dd}/${name}_Info-%d{yyyy-MM-dd}.log">
+        	<Filters>
+        		<ThresholdFilter level="INFO"/>
+        		<ThresholdFilter level="WARN" onMatch="DENY" onMismatch="NEUTRAL"/>
+            </Filters>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%C{10}:%M:%L] - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+        <RollingFile name="RollingFileWarn" fileName="${log.dir}/${name}_Warn.log"
+                     filePattern="${log.dir}/$${date:yyyy-MM}/$${date:dd}/${name}_Warn-%d{yyyy-MM-dd}.log">
+            <Filters>
+            	<ThresholdFilter level="WARN"/>
+                <ThresholdFilter level="ERROR" onMatch="DENY" onMismatch="NEUTRAL"/>
+            </Filters>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%C{10}:%M:%L] - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+        <RollingFile name="RollingFileError" fileName="${log.dir}/${name}_Error.log"
+                     filePattern="${log.dir}/$${date:yyyy-MM}/$${date:dd}/${name}_Error-%d{yyyy-MM-dd}.log">
+        	<Filters>
+                <ThresholdFilter level="ERROR"/>
+            </Filters>
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%C{10}:%M:%L] - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <logger name="org.springframework" level="WARN"/>
+        <logger name="com.naturaltel" level="TRACE"/>
+        <Root level="ALL">
+            <!-- <AppenderRef ref="CONSOLE"/> -->
+            <AppenderRef ref="RollingFileConsole"/>
+            <AppenderRef ref="RollingFileAll"/>
+            <AppenderRef ref="RollingFileDebug"/>
+            <AppenderRef ref="RollingFileInfo"/>
+            <AppenderRef ref="RollingFileWarn"/>
+            <AppenderRef ref="RollingFileError"/>
+        </Root>
+    </Loggers>
+</Configuration>
