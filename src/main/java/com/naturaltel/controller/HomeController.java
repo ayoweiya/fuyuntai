@@ -146,28 +146,28 @@ public class HomeController extends BaseController {
         switch (buyType) {
             case "plan_1":
                 amount = amount_plan1;
-                commodityId = "20190014";
+                commodityId = "20220003";
                 break;
-            case "plan_2":
-                amount = amount_plan2;
-                commodityId = "20190015";
-                break;
-            case "plan_3-1":
-                amount = amount_plan3_1;
-                commodityId = "20190017";
-                break;
-            case "plan_3-2":
-                amount = amount_plan3_2;
-                commodityId = "20190016";
-                break;
-            case "plan_4-1":
-                amount = amount_plan4_1;
-                commodityId = "20190019";
-                break;
-            case "plan_4-2":
-                amount = amount_plan4_2;
-                commodityId = "20190018";
-                break;
+//            case "plan_2":
+//                amount = amount_plan2;
+//                commodityId = "20190015";
+//                break;
+//            case "plan_3-1":
+//                amount = amount_plan3_1;
+//                commodityId = "20190017";
+//                break;
+//            case "plan_3-2":
+//                amount = amount_plan3_2;
+//                commodityId = "20190016";
+//                break;
+//            case "plan_4-1":
+//                amount = amount_plan4_1;
+//                commodityId = "20190019";
+//                break;
+//            case "plan_4-2":
+//                amount = amount_plan4_2;
+//                commodityId = "20190018";
+//                break;
             default:
         }
         logger.debug("amount:{}, commodityId:{}",amount, commodityId);

@@ -182,7 +182,7 @@
 	                <option value="65">新加坡 +65</option>
 	                <option value="60">馬來西亞 +60</option>
 	            </select>
-	            <input type="text" class="col-6 py-2" placeholder="請輸入電話號碼" id="userPhone"">
+	            <input type="text" class="col-6 py-2" placeholder="請輸入電話號碼" id="userPhone">
 	        </div>
 	        <p class=" error_text text-danger text-center d-none">請輸入正確國碼及門號</p>
 	        <div class="btn_submit"><span>確認</span></div>

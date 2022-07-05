@@ -11,19 +11,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="shortcut icon" type="image/png" href="${basePath}/resources/img/logo.png"/>
-	<title>開運算算｜相信的力量，一同體驗泰國愛侶灣四面佛的神威與靈驗</title>
+	<title>四面佛愛神燈－讓愛情守護神照亮你的姻緣路｜開運算算x福運泰</title>
 	<meta name="title" content="開運算算｜相信的力量，一同體驗泰國愛侶灣四面佛的神威與靈驗">
 	<meta name="description"
-		  content="四面佛的『有求必應』，讓來自四面八方的信徒，透過的獻花、點燈、供香祈願，對佛訴說著自己的故事及未來的許諾，願佛的慈悲與寬容像是一道曙光，指引著正向的道路，與開運算算一起透過誠心的點燈，體驗四面佛－相信的力量！">
-	<meta name="keywords" content="開運算算,四面佛,線上,點燈">
-	<link rel="canonical" href="https://fate.opoint.com.tw/fuyuntai/index.html">
+		  content="不用出國也能點到泰國最知名的四面佛愛神燈! 讓你魅力、姻緣、智慧通通提升!虔誠祈求，桃花來不完!">
+	<meta name="keywords" content="開運算算,四面佛,線上點燈,愛神燈,戀愛,脫單,愛情運,">
+	<link rel="canonical" href="https://fate.opoint.com.tw/fuyuntai/phraphromlove/">
 
-	<meta property="og:title" content="開運算算｜相信的力量，一同體驗泰國愛侶灣四面佛的神威與靈驗">
-	<meta property="og:site_name" content="開運算算｜相信的力量，一同體驗泰國愛侶灣四面佛的神威與靈驗">
+	<meta property="og:title" content="四面佛愛神燈－讓愛情守護神照亮你的姻緣路｜開運算算x福運泰">
+	<meta property="og:site_name" content="四面佛愛神燈－讓愛情守護神照亮你的姻緣路｜開運算算x福運泰">
 	<meta property="og:type" content="website">
-	<meta property="og:url" content=" https://fate.opoint.com.tw/fuyuntai/index.html ">
+	<meta property="og:url" content="https://fate.opoint.com.tw/fuyuntai/phraphromlove/">
 	<meta property="og:image" content="https://dlcdnimgs.asus.com/20160129_cosmo/cosmo/${basePath}/resources/images/asus_logo.jpg">
-	<meta property="og:description" content="對佛訴說著自己的故事及未來的許諾，願佛的慈悲與寬容像是一道曙光，指引著正向的道路，與開運算算一起透過誠心的點燈，體驗四面佛－相信的力量！ ">
+	<meta property="og:description" content="不用出國也能點到泰國最知名的四面佛愛神燈! 讓你魅力、姻緣、智慧通通提升!虔誠祈求，桃花來不完!">
 
 	<!-- CSS LINK -->
 	<link rel="stylesheet" href="${basePath}/resources/css/normalize.css" />
@@ -34,13 +34,8 @@
 	<link rel="stylesheet" href="${basePath}/resources/css/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="${basePath}/resources/css/swiper.css" />
 	<!-- JS -->
+	<script src="${basePath}/resources/js/jquery-3.6.0.min.js"></script>
 	<script src="${basePath}/resources/js/bootstrap.js"></script>
-	<%-- header and footer--%>
-	<link href="${basePath}/resources/css/header.css" rel="stylesheet">
-	<link href="${basePath}/resources/css/footer.css" rel="stylesheet">
-	<link href="${basePath}/resources/css/main.css" rel="stylesheet">
-	<link href="${basePath}/resources/css/normalize.css" rel="stylesheet">
-	<link rel="stylesheet" href="${basePath}/resources/js/aos-master/dist/aos.css"/>
 </head>
 
 <body>
@@ -405,14 +400,18 @@
 				<p class="plan-card-title">愛神燈12個⽉</p>
 				<p class="plan-card-price">$1,000</p>
 				<div class="wrap-btn">
-					<p class="btn-primary">立即購買</p>
+					<%-- 如使用popup.jsp，input的name='plan'一定要設定 --%>
+					<input type="radio" name="plan" value="plan_1" id="plan_1" class="d-none">
+					<label for="plan_1">
+						<p id="buyyear" class="btn-primary">立即購買</p>
+					</label>
 				</div>
 			</div>
 		</div>
 	</section>
 	<section class="wrap-section6">
 		<div class="wrap-btn">
-			<p class="btn-secondary">查詢訂單</p>
+			<p id="fuyuntaiorder" class="btn-secondary">查詢訂單</p>
 		</div>
 		<figure class="title-rec">
 			<img class="object-fit-contain" src="${basePath}/resources/images/title-rec.png" alt="" />
@@ -608,9 +607,9 @@
 			<span class="icon-line"></span><span class="icon-arrow"></span>
 		</p>
 	</footer>
+	<jsp:include page="/WEB-INF/views/Common/popup.jsp" flush="true"/>
 </main>
 <!-- script -->
-<script src="${basePath}/resources/js/jquery-3.6.0.min.js"></script>
 <script src="${basePath}/resources/js/main.js"></script>
 <script src="${basePath}/resources/js/swiper-bundle.js"></script>
 <script src="${basePath}/resources/js/swiper-bundle.min.js"></script>
@@ -626,13 +625,14 @@
 	}
 	gtag("js", new Date());
 
-	gtag("config", "G-2NHXQXFWYR");
+	gtag("config", "G-PBVMMVL5TC");
 </script>
 <script>
 	var fromPageId = "".replace(/,/g, "").replace(/%20/g, "");
-	var channel = "";
+	var channel = '${channel}';
 </script>
 <script>
+	console.log("ok");
 	var swiper = new Swiper(".mySwiper", {
 		slidesPerView: 1.3,
 		spaceBetween: 0,
