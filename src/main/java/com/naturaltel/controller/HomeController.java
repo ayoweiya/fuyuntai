@@ -367,26 +367,7 @@ public class HomeController extends BaseController {
         logger.info("lampType: " + lampType);
         switch (lampType) {
             case "plan_1":
-                lampTypeName = "光明燈";
-                break;
-            case "light_fate_product":
-                lampTypeName = "四面佛-事業招財燈";
-                luckyProduct = "開運商品";
-                break;
-            case "plan_2":
-                lampTypeName = "安太歲";
-                break;
-            case "plan_3-1":
-                lampTypeName = "四面佛-事業招財燈(6個月)";
-                break;
-            case "plan_3-2":
-                lampTypeName = "四面佛-事業招財燈(3個月)";
-                break;
-            case "plan_4-1":
-                lampTypeName = "四面佛-愛神燈(6個月)";
-                break;
-            case "plan_4-2":
-                lampTypeName = "四面佛-愛神燈(3個月)";
+                lampTypeName = "福運泰四面佛愛神燈(12個月)";
                 break;
             default:
         }
@@ -508,35 +489,7 @@ public class HomeController extends BaseController {
 
             switch (lampType) {
                 case "plan_1":
-                    lampTypeName = "光明燈";
-                    break;
-                case "light_fate_product":
-                    lampTypeName = "四面佛-事業招財燈";
-                    LuckyProductVO detail = new LuckyProductVO();
-                    detail.setIdx(order.getIdx());
-                    detail.setHasLampInfo(order.getHasLampInfo());
-                    detail.setFateOrder(order.getFateOrder());
-                    detail.setCreateTime(new SimpleDateFormat("yyyy/MM/dd").format(order.getCreateTime()));
-                    detail.setDeliver_Way_LuckyProduct(order.getDeliver_Way_LuckyProduct());
-                    detail.setDeliver_ID_LuckyProduct(order.getDeliver_ID_LuckyProduct());
-                    detail.setDeliver_Time_LuckyProduct(order.getDeliver_Time_LuckyProduct());
-
-                    LuckyProductVO_List.add(detail);
-                    break;
-                case "plan_2":
-                    lampTypeName = "安太歲";
-                    break;
-                case "plan_3-1":
-                    lampTypeName = "四面佛-事業招財燈(6個月)";
-                    break;
-                case "plan_3-2":
-                    lampTypeName = "四面佛-事業招財燈(3個月)";
-                    break;
-                case "plan_4-1":
-                    lampTypeName = "四面佛-愛神燈(6個月)";
-                    break;
-                case "plan_4-2":
-                    lampTypeName = "四面佛-愛神燈(3個月)";
+                    lampTypeName = "福運泰四面佛愛神燈(12個月)";
                     break;
                 default:
             }

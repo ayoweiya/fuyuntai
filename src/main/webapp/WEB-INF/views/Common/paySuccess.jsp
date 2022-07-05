@@ -183,7 +183,7 @@
                         <select name="birth-year" id="birth-year" class="form-control">
                             </c:when>
                             <c:otherwise>
-                            <select class="form-control" disabled>
+                            <select name="birth-year" class="form-control" disabled>
                                 <option value="${birthYear}" selected>${birthYear}</option>
                                 </c:otherwise>
                                 </c:choose>
@@ -195,7 +195,7 @@
                         <select name="birth-month" id="birth-month" class="form-control">
                             </c:when>
                             <c:otherwise>
-                            <select class="form-control" disabled>
+                            <select name="birth-month" class="form-control" disabled>
                                 <option value="${birthMonth}" selected>${birthMonth}</option>
                                 </c:otherwise>
                                 </c:choose>
@@ -207,7 +207,7 @@
                         <select name="birth-day" id="birth-day" class="form-control">
                             </c:when>
                             <c:otherwise>
-                            <select class="form-control" disabled>
+                            <select name="birth-day" class="form-control" disabled>
                                 <option value="${birthDate}" selected>${birthDate}</option>
                                 </c:otherwise>
                                 </c:choose>
@@ -257,7 +257,7 @@
                             </c:when>
                             <c:otherwise>
                                 <select id="city" class="form-control">
-                                    <option selected disabled>${city}</option>
+                                    <option value="${city}" selected disabled>${city}</option>
                                 </select>
                             </c:otherwise>
                         </c:choose>
@@ -271,7 +271,7 @@
                             </c:when>
                             <c:otherwise>
                                 <select id="dist" class="form-control">
-                                    <option selected disabled>${dist}</option>
+                                    <option value="${dist}" selected disabled>${dist}</option>
                                 </select>
                             </c:otherwise>
                         </c:choose>
@@ -282,7 +282,7 @@
                         <input type="text" id="road" name="road" class="form-control mt-2">
                     </c:when>
                     <c:otherwise>
-                        <input type="text" value="${road}" class="form-control mt-2" readonly>
+                        <input type="text" id="road" value="${road}" class="form-control mt-2" readonly>
                     </c:otherwise>
                 </c:choose>
             </div>
@@ -651,13 +651,13 @@
             addItemClickAjax(pageId, btnId);
 
             let name = $("#name").val();
-            let birthYear = $("#birth-year").val();
-            let birthMonth = $("#birth-month").val();
-            let birthDay = $("#birth-day").val();
+            let birthYear = $("select[name='birth-year'] option:selected").val();
+            let birthMonth = $("select[name='birth-month'] option:selected").val();
+            let birthDay = $("select[name='birth-day'] option:selected").val();
             let birth = birthYear + '/' + birthMonth + '/' + birthDay;
             let area = $('input[name=area]:checked').val();
-            let addrCity = $("#city").val();
-            let addrDist = $("#dist").val();
+            let addrCity = $("#city  option:selected").val();
+            let addrDist = $("#dist option:selected").val();
             let addrRoad = $("#road").val();
             let wishMsg = $('#wish-msg').val();
             if (wishMsg.length > 0 && wishMsg.length < 5) {

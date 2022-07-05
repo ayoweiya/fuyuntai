@@ -20,10 +20,10 @@
     <link href="${basePath}/resources/css/swiper.min.css" rel="stylesheet">
 
     <%-- header and footer--%>
-    <link href="${basePath}/resources/css/2022/07/header.css" rel="stylesheet">
-    <link href="${basePath}/resources/css/2022/07/footer.css" rel="stylesheet">
-    <link href="${basePath}/resources/css/2022/07/main.css" rel="stylesheet">
-    <link href="${basePath}/resources/css/2022/07/normalize.css" rel="stylesheet">
+    <link href="${basePath}/resources/css/header.css" rel="stylesheet">
+    <link href="${basePath}/resources/css/footer.css" rel="stylesheet">
+    <link href="${basePath}/resources/css/main.css" rel="stylesheet">
+    <link href="${basePath}/resources/css/normalize.css" rel="stylesheet">
     <link rel="stylesheet" href="${basePath}/resources/js/aos-master/dist/aos.css"/>
 
     <style>
@@ -148,32 +148,6 @@
                             </tbody>
                         </table>
 
-                        <h5 class="mb-1">還願方案:</h5>
-                        <c:choose>
-                            <c:when test="${orderVO.isVotive==1}">
-                                <div class="payed-plan border-bottom border-secondary">
-                                    <p class="ml-3">${orderVO.votiveTimes} 還願,${orderVO.votiveType}</p>
-                                </div>
-                            </c:when>
-                            <c:otherwise>
-                                <div class="plan-choose d-flex justify-content-between border-bottom border-secondary">
-                                    <ul>
-                                        <li><input type="radio" name="plan" class="mr-2 plan-option" value="threeMonth">供象—三個月
-                                        </li>
-                                        <li><input type="radio" name="plan" class="mr-2 plan-option" value="halfYear">供象—六個月
-                                        </li>
-                                        <li><input type="radio" name="plan" class="mr-2 plan-option" value="oneYear">供象—十二個月
-                                        </li>
-                                    </ul>
-                                    <div class="text-right">
-                                        <p class="text-danger">NT$ <span class="plan-price">請選擇方案</span></p>
-                                        <div class="btn btn-outline-secondary goVotive"
-                                             fateOrder="${orderVO.fateOrder}">確定送出
-                                        </div>
-                                    </div>
-                                </div>
-                            </c:otherwise>
-                        </c:choose>
                         <div id="plan-detail">
                             <a class="btn btn-sm text-dark" data-toggle="collapse"
                                href="#plan-detail-info${orderVO.idx}">
@@ -201,9 +175,11 @@
 
                                 <div class="notice mt-5">
                                     <h5>貼心提醒</h5>
-                                    <p>1.若您在<span class="text-danger">【當月】</span>送出祈福資料，則會於<span class="text-danger">【次月20日】</span>由無上元老師祈福，例如您在8/15送出祈福資料，則會於9/20由無上元老師祈福。</li>
+                                    <p>a) 在您送出祈福資料後，會於<span class="text-danger">【隔週】</span>進行點燈祈福。
                                     </p>
-                                    <p>2.祈福完畢後，將於<span class="text-danger">10個工作天</span>內將祈福點燈的資料照上傳至您在開運算算的訂單頁中。
+                                    <p>b) 祈福完畢後，將於<span class="text-danger">10個工作天</span>內將祈福點燈的資料照上傳至您在開運算算的訂單頁中。
+                                    </p>
+                                    <p>c) 開運贈品會於送出祈福資料後<span class="text-danger">【次月】</span>寄送到您填寫的現居地址。
                                     </p>
                                 </div>
                             </div>
