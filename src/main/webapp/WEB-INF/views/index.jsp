@@ -28,15 +28,15 @@
     <!-- CSS LINK -->
     <link rel="stylesheet" href="${basePath}/resources/css/cssreset-min.css">
     <link rel="stylesheet" href="${basePath}/resources/css/bootstrap.css">
-    <link rel="stylesheet" href="${basePath}/resources/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="${basePath}/resources/css/2022/07/swiper-bundle.min.css">
     <link rel="stylesheet" href="${basePath}/resources/css/common.css">
     <link rel="stylesheet" href="${basePath}/resources/css/fontawesome-free-5.15.1.min.css">
 
     <%-- header and footer--%>
-    <link href="${basePath}/resources/css/header.css" rel="stylesheet">
-    <link href="${basePath}/resources/css/footer.css" rel="stylesheet">
-    <link href="${basePath}/resources/css/main.css" rel="stylesheet">
-    <link href="${basePath}/resources/css/normalize.css" rel="stylesheet">
+    <link href="${basePath}/resources/css/2022/07/header.css" rel="stylesheet">
+    <link href="${basePath}/resources/css/2022/07/footer.css" rel="stylesheet">
+    <link href="${basePath}/resources/css/2022/07/main.css" rel="stylesheet">
+    <link href="${basePath}/resources/css/2022/07/normalize.css" rel="stylesheet">
     <link rel="stylesheet" href="${basePath}/resources/js/aos-master/dist/aos.css"/>
 
     <style>

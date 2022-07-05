@@ -1,0 +1,36 @@
+.swiper-button-prev {
+  width: 120px;
+  height: 80px;
+  background-image: url("../../../images/leftarrow.png");
+  background-repeat: no-repeat;
+  background-size: 80px;
+  background-position: center;
+}
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-next {
+  width: 120px;
+  height: 80px;
+  background-image: url("../../../images/rightarrow.png");
+  background-repeat: no-repeat;
+  background-size: 80px;
+  background-position: center;
+}
+.swiper-button-next::after {
+  display: none;
+}
+
+.swiper-slide-active .video {
+  transform: scale(1) !important;
+}
+
+@media (max-width: 720px) {
+  .swiper-button-prev {
+    background-image: none;
+  }
+  .swiper-button-next {
+    background-image: none;
+  }
+}

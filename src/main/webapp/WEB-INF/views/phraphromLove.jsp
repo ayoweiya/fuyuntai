@@ -26,13 +26,13 @@
 	<meta property="og:description" content="不用出國也能點到泰國最知名的四面佛愛神燈! 讓你魅力、姻緣、智慧通通提升!虔誠祈求，桃花來不完!">
 
 	<!-- CSS LINK -->
-	<link rel="stylesheet" href="${basePath}/resources/css/normalize.css" />
-	<link rel="stylesheet" href="${basePath}/resources/css/main.css" />
-	<link rel="stylesheet" href="${basePath}/resources/css/header.css" />
-	<link rel="stylesheet" href="${basePath}/resources/css/footer.css" />
-	<link rel="stylesheet" href="${basePath}/resources/css/aos.css" />
-	<link rel="stylesheet" href="${basePath}/resources/css/swiper-bundle.min.css" />
-	<link rel="stylesheet" href="${basePath}/resources/css/swiper.css" />
+	<link rel="stylesheet" href="${basePath}/resources/2022/07/css/normalize.css" />
+	<link rel="stylesheet" href="${basePath}/resources/2022/07/css/main.css" />
+	<link rel="stylesheet" href="${basePath}/resources/2022/07/css/header.css" />
+	<link rel="stylesheet" href="${basePath}/resources/2022/07/css/footer.css" />
+	<link rel="stylesheet" href="${basePath}/resources/2022/07/css/aos.css" />
+	<link rel="stylesheet" href="${basePath}/resources/2022/07/css/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="${basePath}/resources/2022/07/css/swiper.css" />
 	<!-- JS -->
 	<script src="${basePath}/resources/js/jquery-3.6.0.min.js"></script>
 	<script src="${basePath}/resources/js/bootstrap.js"></script>
