@@ -19,10 +19,10 @@
     <link href="${basePath}/resources/css/swiper.min.css" rel="stylesheet">
 
     <%-- header and footer--%>
-    <link href="${basePath}/resources/css/2022/07/header.css" rel="stylesheet">
-    <link href="${basePath}/resources/css/2022/07/footer.css" rel="stylesheet">
-    <link href="${basePath}/resources/css/2022/07/main.css" rel="stylesheet">
-    <link href="${basePath}/resources/css/2022/07/normalize.css" rel="stylesheet">
+    <link href="${basePath}/resources/css/header.css" rel="stylesheet">
+    <link href="${basePath}/resources/css/footer.css" rel="stylesheet">
+    <link href="${basePath}/resources/css/main.css" rel="stylesheet">
+    <link href="${basePath}/resources/css/normalize.css" rel="stylesheet">
     <link rel="stylesheet" href="${basePath}/resources/js/aos-master/dist/aos.css"/>
 
     <style>
@@ -55,7 +55,7 @@
 
     <div class="container-fluid text-center py-5 h-100">
         <h2>付款失敗</h2>
-        <p class="mb-5">本次交易失敗不扣款，若有任何問題請洽開運算算客服，謝謝！</p>
+        <p class="mb-5">本次交易失敗不扣款，<br>若有任何問題請洽開運算算客服，謝謝！</p>
         <a href="index.html" class="btn btn-lg btn-dark goIndex">回首頁</a>
     </div>
 
