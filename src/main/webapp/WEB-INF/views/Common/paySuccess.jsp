@@ -156,7 +156,7 @@
     <jsp:include page="/WEB-INF/views/Common/header.jsp" flush="true"/>
 
     <div class="container-fluid text-center py-3" style="background-color: #E0E0E0;">
-        <h2 class="h5 mb-2">付費成功</h2>
+        <h2 class="h5 mb-2">付費成功!</h2>
         <p>請誠心地述說自己的心願和對佛的許諾</p>
         <form action="${basePath}/saveInfo.html" class="px-md-5 px-2 pb-3 text-left bg-white rounded" id="main-form">
 
@@ -303,9 +303,10 @@
 
             <div class="px-3 mb-3">
                 <p>貼心提醒</p>
-                <small>1. 提醒您，送出資料後才算完成點燈祈福&開運商品領取步驟喔！</small><br>
-                <small>2. 若您在<span class="text-danger">【當月】</span>送出祈福資料，則會於<span class="text-danger">【次月20日】</span>由無上元老師祈福，例如您在8月15日送出祈福資料，則會於9月20日由無上元老師祈福。</small><br>
+                <small>1. 提醒您，送出資料後才算完成點燈祈福步驟喔！</small><br>
+                <small>2. 在您送出祈福資料後，會於<span class="text-danger">【隔週】</span>進行點燈祈福。</small><br>
                 <small>3. 祈福完畢後，將於<span class="text-danger">10個工作天</span>內將祈福點燈的資料照上傳至您在開運算算的訂單頁中。</small><br>
+                <small>4. 開運贈品會於送出祈福資料後【次月】寄送到您填寫的現居地址</small><br>
             </div>
 
 
