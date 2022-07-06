@@ -10,9 +10,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="shortcut icon" type="image/png" href="${basePath}/resources/img/logo.png"/>
+	<link rel="shortcut icon" type="image/png" href="/fateStorage/fate/logo_S.svg"/>
 	<title>四面佛愛神燈－讓愛情守護神照亮你的姻緣路｜開運算算x福運泰</title>
-	<meta name="title" content="開運算算｜相信的力量，一同體驗泰國愛侶灣四面佛的神威與靈驗">
 	<meta name="description"
 		  content="不用出國也能點到泰國最知名的四面佛愛神燈! 讓你魅力、姻緣、智慧通通提升!虔誠祈求，桃花來不完!">
 	<meta name="keywords" content="開運算算,四面佛,線上點燈,愛神燈,戀愛,脫單,愛情運,">
@@ -22,7 +21,6 @@
 	<meta property="og:site_name" content="四面佛愛神燈－讓愛情守護神照亮你的姻緣路｜開運算算x福運泰">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://fate.opoint.com.tw/fuyuntai/phraphromlove/">
-	<meta property="og:image" content="https://dlcdnimgs.asus.com/20160129_cosmo/cosmo/${basePath}/resources/images/asus_logo.jpg">
 	<meta property="og:description" content="不用出國也能點到泰國最知名的四面佛愛神燈! 讓你魅力、姻緣、智慧通通提升!虔誠祈求，桃花來不完!">
 
 	<!-- CSS LINK -->
@@ -618,6 +616,8 @@
 <script src="${basePath}/resources/js/footer.js"></script>
 <script src="${basePath}/resources/js/aos.js"></script>
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PBVMMVL5TC"></script>
 <script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag() {
