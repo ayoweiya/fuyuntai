@@ -632,10 +632,10 @@
 	var channel = '${channel}';
 </script>
 <script>
-	console.log("ok");
 	var swiper = new Swiper(".mySwiper", {
 		slidesPerView: 1.3,
 		spaceBetween: 0,
+		slideToClickedSlide: false,
 		centeredSlides: true,
 		mousewheel: true,
 		loop: true,
@@ -653,7 +653,31 @@
 				spaceBetween: 70,
 			},
 		},
-		centeredSlides: true,
+		on: {
+			touchStart(){
+				this.slides[this.activeIndex].querySelector("iframe").style.pointerEvents = "none";
+				console.log(this.slides[this.activeIndex].querySelector("iframe").style.pointerEvents);
+			},
+			touchEnd(){
+				// 由於touchEnd比click先觸發，所以要等click執行完以後，再恢復pointer-events
+				this.slides[this.activeIndex].querySelector("iframe").style.pointerEvents = "auto";
+				// setTimeout(()=>{
+				// this.slides[this.activeIndex].querySelector("iframe").style.pointerEvents = "none";
+				// }, 1000);
+				console.log(this.slides[this.activeIndex].querySelector("iframe").style.pointerEvents);
+
+			},
+			slideChange(el) {
+				this.slides[this.activeIndex].querySelector("iframe").style.pointerEvents = "none";
+				console.log('1');
+				$('.swiper-slide').each(function () {
+					var youtubePlayer = $(this).find('iframe').get(0);
+					if (youtubePlayer) {
+						youtubePlayer.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+					}
+				});
+			},
+		}
 	});
 </script>
 <jsp:include page="/WEB-INF/views/Common/common.jsp" flush="true"/>
