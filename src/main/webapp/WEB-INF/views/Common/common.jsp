@@ -14,10 +14,10 @@
 <script>
 	let basePath = '${basePath}';
 
-	// if (window.location.protocol == "http:") {
-	// 	window.location.href = "https://" + location.hostname
-	// 	+ location.pathname + location.search + location.hash;
-	// }
+	if (window.location.protocol == "http:") {
+		window.location.href = "https://" + location.hostname
+		+ location.pathname + location.search + location.hash;
+	}
 	
 	$(function initCommon() {
 		initPage();
