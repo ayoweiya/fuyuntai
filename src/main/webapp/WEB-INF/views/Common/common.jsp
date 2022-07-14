@@ -2,13 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="basePath" scope="page" value="${pageContext.request.contextPath}"/>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151818705-6"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PBVMMVL5TC"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-151818705-6');
+  gtag('config', 'G-PBVMMVL5TC');
 </script>
 
 <script>
