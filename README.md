@@ -13,13 +13,13 @@
 ```xhtml
  <param-value>
     file://${catalina.home}/config/fuyuntai/log4j2.xml
- </param-value>"
+ </param-value>
 ```  
 改成
 ```xhtml
 <param-value>
     build/resources/main/Stagging/log4j2.xml
-</param-value>"
+</param-value>
 ```
 
 ##  三、URL:
