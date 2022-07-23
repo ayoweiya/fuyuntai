@@ -247,7 +247,7 @@
 				<img class="object-fit-contain" src="${basePath}/resources/images/titile-03.png" alt="" />
 			</figure>
 		</div>
-		<div class="phraphrom-love-container wrap-circle-card">
+		<div class="phraphrom-love-container wrap-circle-card btn-slide">
 			<div class="circle-card">
 				<figure class="card-img">
 					<img

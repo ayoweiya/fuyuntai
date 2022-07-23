@@ -4,16 +4,38 @@ function initPage() {
   // $(document).ready 的事情統一在此處理
   addPageViewAjax(pageId, fromPageId, channel);
 
-  const btnGoLight = $(".btn-golight").offset().top;
+  const btnGoLight = $(".btn-golight").position().top;
+  const btnSlide = $(".btn-slide").position().top;
   const planPosition = $(".title-project").position().top;
   const titleRecPosition = $(".title-rec").position().top;
 
-  $(window).scroll(function () {
-    if ($(window).scrollTop() >= btnGoLight) {
-      $(".fixed-btn-golight").addClass("active");
+  function myFunction(x) {
+    if (x.matches) {
+      if ($(window).scrollTop() >= btnSlide) {
+        $(".fixed-btn-golight").addClass("active");
+      } else {
+        $(".fixed-btn-golight").removeClass("active");
+      }
     } else {
-      $(".fixed-btn-golight").removeClass("active");
+      if ($(window).scrollTop() >= btnGoLight) {
+        $(".fixed-btn-golight").addClass("active");
+      } else {
+        $(".fixed-btn-golight").removeClass("active");
+      }
     }
+  }
+  const mobileWidth = window.matchMedia("(max-width: 768px)")
+  myFunction(mobileWidth);
+
+
+  $(window).scroll(function () {
+    myFunction(mobileWidth);
+
+    // if ($(window).scrollTop() >= btnGoLight) {
+    //   $(".fixed-btn-golight").addClass("active");
+    // } else {
+    //   $(".fixed-btn-golight").removeClass("active");
+    // }
 
     if (
         $(window).scrollTop() >= planPosition &&
