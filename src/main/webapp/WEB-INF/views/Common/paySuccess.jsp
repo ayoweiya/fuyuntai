@@ -694,7 +694,7 @@
                 if ((area === 'taiwan') && name && birthYear && birthMonth && birthDay && addrCity && addrDist && addrRoad && wishMsg
                     && name_luckyProduct && area_luckyProduct && city_luckyProduct && dist_luckyProduct && road_luckyProduct) {
                     console.log(1);
-                    let confirmStr = '<p>=====祈福內容===== </p>' + '<p>姓名:' + name + '</p><p>出生日期:' + birth + '</p><p>地址:' + addrCity + addrDist + addrRoad + '</p><p>願望:' + wishMsg + '</p>'
+                    let confirmStr = '<p>=====祈福內容===== </p>' + '<p>姓名:' + name + '</p><p>出生日期:' + birth + '</p><p>地址:' + addrCity + addrDist + addrRoad + '</p><p><textarea cols="30" rows="5" maxlength="70" style="resize : none;border:0px;background: #e2e1e0;resize : none;" disabled>願望：' + wishMsg + '</textarea></p>'
                         + '<br>' + '<p>=====購買品項===== </p>' + '<p>姓名:' + name_luckyProduct + '</p><p>地址:' + city_luckyProduct + dist_luckyProduct + road_luckyProduct + '</p>';
                     $('.popup_content').empty().append(confirmStr);
                     $('.popup_box').addClass('show');
@@ -702,7 +702,7 @@
                 } else if (((area === 'foreign')) && name && birthYear && birthMonth && birthDay && addrRoad && wishMsg
                     && name_luckyProduct && area_luckyProduct && road_luckyProduct) {
                     console.log(2);
-                    let confirmStr = '<p>=====祈福內容===== </p>' + '<p>姓名:' + name + '</p><p>出生日期:' + birth + '</p><p>地址:' + addrRoad + '</p><p>願望:' + wishMsg
+                    let confirmStr = '<p>=====祈福內容===== </p>' + '<p>姓名:' + name + '</p><p>出生日期:' + birth + '</p><p>地址:' + addrRoad + '</p><p><textarea cols="30" rows="5" maxlength="70" style="resize : none;border:0px;background: #e2e1e0;resize : none;" disabled>願望：' + wishMsg + '</textarea>'+
                         + '<br>' + '<p>=====購買品項===== </p>' + '<p>姓名:' + name_luckyProduct + '</p><p>地址:' + city_luckyProduct + dist_luckyProduct + road_luckyProduct + '</p>';
                     $('.popup_content').empty().append(confirmStr);
                     $('.popup_box').addClass('show');
@@ -713,12 +713,12 @@
             } else {
                 // 沒有開運商品
                 if ((area === 'taiwan') && name && birthYear && birthMonth && birthDay && addrCity && addrDist && addrRoad && wishMsg) {
-                    let confirmStr = '<p>姓名:' + name + '</p><p>出生日期:' + birth + '</p><p>地址:' + addrCity + addrDist + addrRoad + '</p><p>願望:' + wishMsg + '</p>';
+                    let confirmStr = '<p>姓名:' + name + '</p><p>出生日期:' + birth + '</p><p>地址:' + addrCity + addrDist + addrRoad + '</p><textarea cols="30" rows="5" maxlength="70" style="resize : none;border:0px;background: #e2e1e0;resize : none;" disabled>願望：' + wishMsg + '</textarea></p>';
                     $('.popup_content').empty().append(confirmStr);
                     $('.popup_box').addClass('show');
                     $('.wrap_popup').addClass('show');
                 } else if (((area === 'foreign')) && name && birthYear && birthMonth && birthDay && addrRoad && wishMsg) {
-                    let confirmStr = '<p>姓名:' + name + '</p><p>出生日期:' + birth + '</p><p>地址:' + addrRoad + '</p><p>願望:' + wishMsg + '</p>';
+                    let confirmStr = '<p>姓名:' + name + '</p><p>出生日期:' + birth + '</p><p>地址:' + addrRoad + '</p><textarea cols="30" rows="5" maxlength="70" style="resize : none;border:0px;background: #e2e1e0;resize : none;" disabled>願望：' + wishMsg + '</textarea></p>';
                     $('.popup_content').empty().append(confirmStr);
                     $('.popup_box').addClass('show');
                     $('.wrap_popup').addClass('show');

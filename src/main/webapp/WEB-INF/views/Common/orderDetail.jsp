@@ -489,7 +489,7 @@
 
         $('.modal-body').empty();
 
-        var html = '<p>您的相片尚未上傳，再請稍候！</p><p>--</p><p>1.若您在<span class="text-danger">【當月】</span>送出祈福資料，則會於<span class="text-danger">【次月20日】</span>由無上元老師祈福，例如您在8/15送出祈福資料，則會於9/20由無上元老師祈福。</li></p><p>2.祈福完畢後，將於<span class="text-danger">10個工作天</span>內將祈福點燈的資料照上傳至您在開運算算的訂單頁中。</p>';
+        var html = '<p>您的相片尚未上傳，再請稍候！</p><p>--</p><p>1.在您送出祈福資料後，會於<span class="text-danger">【隔週】</span>進行點燈祈福。</li></p><p>2.祈福完畢後，將於<span class="text-danger">10個工作天</span>內將祈福點燈的資料照上傳至您在開運算算的訂單頁中。</p><p>3.開運贈品會於送出祈福資料後<span class="text-danger">【次月】</span>寄送到您填寫的現居地址。</p>';
         $('.modal-body').html(html);
     }
 </script>
